@@ -10,7 +10,7 @@ chmod +x init_ubuntu.sh
 
 - `change_src`   Replace sources.list with domestic mirrors. (boolean)
 
-- `mirrors`   Choose mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
+- `mirror`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
 
 - `git`   Install git. (boolean)
 
@@ -22,10 +22,36 @@ chmod +x init_ubuntu.sh
 
 - `vscode`   Install VSCode. (boolean)
 
+- `vim`
+
+- `typora`
+
 - `jdk`   Install OpenJDK. (boolean)
 
 - `idea`   Install IDEA. (boolean)
 
+- `tensorflow`
+
+- `pytorch`
+
+- `py_com`   Install general python models. (boolean)
+
+- `py_dl`   Install commonly used py models for deep learning, contains all in py_com. (boolean)
+
 - `clash`   Install and deploy clash for VPN connect. (boolean)
 
 - `clash_sub`   Your own subscription link for clash, matters only when clash is true.
+
+- `chrome`
+
+- `del_firefox`
+
+- `del_libre`
+
+- `del_games`
+
+- `del_todo`
+
+- `del_rhythmbox`
+
+- `del_`
