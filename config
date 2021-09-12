@@ -1,26 +1,27 @@
-change_src=1
-delete_pack=1
-dir_en=1
+CH_SRC=1
+MIRROR=aliyun
+DIR_EN=1
 
-git=1
-git_user=
-git_password=
-ssh=1
-gen_ssh=1
+PIP=1
+GIT=1
+GIT_USER=
+GIT_PASS=
+SSH=1
+GEN_SSH=1
 
-vscode=1
-typora=1
-pycharm=1
+VSCODE=1
+TYPORA=1
+PYCHARM=1
 
-jdk=1
-idea=1
+JDK=1
+IDEA=1
 
 node.js=1
-picgo=1
+PICGO=1
 
-chrome=1
+CHROME=1
 
-clash=1
+CLASH=1
 
-gpu_update=1
-py_models=1
+GPU_UPDATE=1
+PY_MODEL=1

@@ -2,15 +2,17 @@
 a script tool to quickly initialize your brand new ubuntu system, making it fully furnished
 
 ```
-chmod +x init_ubuntu.sh
+chmod a+x init_ubuntu.sh
 ./init_ubuntu.sh
 ```
 
 ### Config Options
 
-- `change_src`   Replace sources.list with domestic mirrors. (boolean)
+- `ch_src`   Replace sources.list with domestic mirrors. (boolean)
 
 - `mirror`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
+
+- `time`   Change time zone to CST(Shanghai, China) if you want. (boolean)
 
 - `git`   Install git. (boolean)
 
