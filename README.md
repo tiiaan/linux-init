@@ -10,4 +10,22 @@ chmod +x init_ubuntu.sh
 
 - `change_src`   Replace sources.list with domestic mirrors. (boolean)
 
-- `mirrors`   Choose which mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
+- `mirrors`   Choose mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
+
+- `git`   Install git. (boolean)
+
+- `git_user`   Your git user name, matters only when git is true.
+
+- `git_pass`   Your git password, matters only when git is true.
+
+- `ssh`   Install ssh, generate key under /home/.ssh. (boolean)
+
+- `vscode`   Install VSCode. (boolean)
+
+- `jdk`   Install OpenJDK. (boolean)
+
+- `idea`   Install IDEA. (boolean)
+
+- `clash`   Install and deploy clash for VPN connect. (boolean)
+
+- `clash_sub`   Your own subscription link for clash, matters only when clash is true.
