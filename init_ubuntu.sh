@@ -16,7 +16,6 @@ if [ "${CH_SRC}" == "1" ]; then
         echo
     
     sudo apt autoclean
-    # sudo apt clean
     sudo apt update
     sudo apt upgrade -y
     sudo apt autoremove -y
@@ -64,6 +63,12 @@ if [ "${VSCODE}" == "1" ]; then
     VSCODE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+if [ "${PYCHARM}" == "1" ]; then
+    ssudo snap install pycharm-community --classic
+    PYCHARM_FLAG=1
+    PYCHARM_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
 # Install Typora
 if [ "${TYPORA}" == "1" ]; then
     wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -75,14 +80,27 @@ fi
 
 # Install OpenJDK
 if [ "${JDK}" == "1" ]; then
+    sudo apt update
+    sudo apt install -y openjdk-11-jdk
+    java -version   
+    sudo apt autoremove -y
     JDK_FLAG=1
     JDK_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
 # Install IDEA
 if [ "${IDEA}" == "1" ]; then
+    sudo snap install intellij-idea-community --classic
     IDEA_FLAG=1
     IDEA_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
+# Install Chrome
+if [ "${CHROME}" == "1" ]; then
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo apt install -y ./google-chrome-stable_current_amd64.deb
+    CHROME_FLAG=1
+    CHROME_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
 # Install CLash
@@ -110,14 +128,6 @@ if [ "${CLASH}" == "1" ]; then
     sudo systemctl daemon-reload
     sudo systemctl start clash.service
     sudo systemctl enable clash.service
-fi
-
-# Install Chrome
-if [ "${CHROME}" == "1" ]; then
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt install -y ./google-chrome-stable_current_amd64.deb
-    CHROME_FLAG=1
-    CHROME_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
 # Install PicGo
