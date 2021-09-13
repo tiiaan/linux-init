@@ -8,7 +8,7 @@ chmod a+x init_ubuntu.sh
 
 ### Config Options
 
-- `ch_src`   Replace sources.list with domestic mirrors. (boolean)
+- `CH_SRC`   Replace sources.list with domestic mirrors. (boolean)
 
 - `mirror`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
 
