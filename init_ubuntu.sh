@@ -4,11 +4,6 @@
 # @link https://github.com/tiiaan/ubuntu-scaffold
 source config
 
-# Shutdown Password
-if [ "${NO_PASS}" == "1" ]; then
-    sudo visudo
-fi
-
 # Change Source
 VERSION = $(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
 if [ "${CH_SRC}" == "1" ]; then
@@ -20,6 +15,11 @@ if [ "${CH_SRC}" == "1" ]; then
     sudo apt upgrade -y
     sudo apt autoremove -y
     CH_SRC_FLAG=1
+fi
+
+# Shutdown Password
+if [ "${NO_PASS}" == "1" ]; then
+    sudo visudo
 fi
 
 # Install Git
@@ -69,9 +69,13 @@ if [ "${NPM}" == "1" ]; then
     NPM_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
-# Install Python Models
-if [ "${PY_MODEL}" == "1" ]; then
-    pip install -r -y requirements.txt
+# Install LateX Env.
+if [ "${TEX}" == "1" ]; then
+    sudo apt update -y
+    sudo apt install -y texlive-full
+    tex --version
+    TEX_FLAG=1
+    TEX_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
 # Install Visual Studio Code
@@ -269,6 +273,10 @@ fi
 
 if [ "${NPM_FLAG}" == "1" ]; then
     echo -e "- NPM was installed at ${NPM_TIME}." | tee -a init.log
+fi
+
+if [ "${TEX_FLAG}" == "1" ]; then
+    echo -e "- Texlive was installed at ${TEX_TIME}." | tee -a init.log
 fi
 
 if [ "${VSCODE_FLAG}" == "1" ]; then
