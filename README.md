@@ -10,50 +10,39 @@ chmod a+x init_ubuntu.sh
 
 - `CH_SRC`   Replace sources.list with domestic mirrors. (boolean)
 
-- `mirror`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
+- `MIRROR`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
 
-- `time`   Change time zone to CST(Shanghai, China) if you want. (boolean)
+- `ENGLISH`   I suggest to install linux in Chinese, and then set the system language to English. (boolean)
 
-- `git`   Install git. (boolean)
+- `GIT`   Install git. (boolean)
 
-- `git_user`   Your git user name, matters only when git is true.
+- `GIT_USER`   Your git user name, matters only when git is true. （string)
 
-- `git_pass`   Your git password, matters only when git is true.
+- `GIT_EMAIL`   Your git user email, matters only when git is true. (string)
 
-- `ssh`   Install ssh, generate key under /home/.ssh. (boolean)
+- `SSH`   Install ssh. (boolean)
 
-- `vscode`   Install VSCode. (boolean)
+- `VSCODE`   Install VSCode. (boolean)
 
-- `vim`
+- `VIM` 
 
-- `typora`
+- `TYPORA`
 
-- `jdk`   Install OpenJDK. (boolean)
+- `JDK`   Install OpenJDK. (boolean)
 
-- `idea`   Install IDEA. (boolean)
+- `IDEA`   Install IDEA. (boolean)
 
-- `tensorflow`
+- `PICGO`   Install and deploy clash for VPN connect. (boolean)
 
-- `pytorch`
+- `CHROME`
 
-- `py_com`   Install general python models. (boolean)
+- `RM_FIREFOX`   Remove firefox 
 
-- `py_dl`   Install commonly used py models for deep learning, contains all in py_com. (boolean)
+- `RM_LIBRE`   Remove 
 
-- `clash`   Install and deploy clash for VPN connect. (boolean)
+- `RM_GAMES`   Remove
 
-- `clash_sub`   Your own subscription link for clash, matters only when clash is true.
+- `RM_TODO`
 
-- `chrome`
+- `RM_RHYTHM`
 
-- `del_firefox`
-
-- `del_libre`
-
-- `del_games`
-
-- `del_todo`
-
-- `del_rhythmbox`
-
-- `del_`
