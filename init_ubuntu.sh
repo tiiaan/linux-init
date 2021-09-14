@@ -7,9 +7,10 @@ source config
 # Change Source
 VERSION = $(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
 if [ "${CH_SRC}" == "1" ]; then
-    if["${VERSION}" == "20.04"]; then
-        echo
-    
+    if [ "${VERSION}" == "20.04" ]; then
+        sudo cp /etc/apt/sources.list /etc/apt/sources_backup.list
+        sudo cp ./mirrors/aliyun-2004.list /etc/apt/sources.list
+    fi
     sudo apt autoclean
     sudo apt update -y
     sudo apt upgrade -y
@@ -18,9 +19,9 @@ if [ "${CH_SRC}" == "1" ]; then
 fi
 
 # Shutdown Password
-if [ "${NO_PASS}" == "1" ]; then
-    sudo visudo
-fi
+# if [ "${NO_PASS}" == "1" ]; then
+#     sudo visudo
+# fi
 
 # Install Git
 if [ "${GIT}" == "1" ]; then
