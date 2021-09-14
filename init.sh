@@ -5,9 +5,9 @@
 source config
 
 # Change Source
-VERSION = $(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
+Version = $(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
 if [ "${CH_SRC}" == "1" ]; then
-    if [ "${VERSION}" == "20.04" ]; then
+    if [ "${Version}" == "20.04" ]; then
         sudo cp /etc/apt/sources.list /etc/apt/sources_backup.list
         sudo cp ./mirrors/aliyun-2004.list /etc/apt/sources.list
     fi
@@ -18,11 +18,6 @@ if [ "${CH_SRC}" == "1" ]; then
     CH_SRC_FLAG=1
     CH_SRC_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
-
-# Shutdown Password
-# if [ "${NO_PASS}" == "1" ]; then
-#     sudo visudo
-# fi
 
 # Install Git
 if [ "${GIT}" == "1" ]; then
@@ -91,7 +86,7 @@ if [ "${VSCODE}" == "1" ]; then
 fi
 
 if [ "${PYCHARM}" == "1" ]; then
-    ssudo snap install pycharm-community --classic
+    sudo snap install pycharm-community --classic
     PYCHARM_FLAG=1
     PYCHARM_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
@@ -344,3 +339,4 @@ fi
 if [ "${RM_TOTEM_FLAG}" == "1" ]; then
     echo -e "- Totem media player was uninstalled at ${RM_TOTEM_TIME}." | tee -a init.log
 fi
+

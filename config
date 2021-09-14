@@ -1,7 +1,4 @@
 CH_SRC=1
-MIRROR=tsinghua
-NO_PASS=1
-
 GIT=1
 GIT_USER=your user name
 GIT_EMAIL=your user email
@@ -18,8 +15,7 @@ IDEA=1
 CHROME=1
 NOMACS=1
 VLC=1
-PICGO=1
-
+PICGO=0
 RM_FIREFOX=0
 RM_GAMES=0
 RM_LIBRE=0
