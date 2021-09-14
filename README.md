@@ -1,3 +1,4 @@
+
 ### How to
 a script tool to quickly initialize your brand new ubuntu system, making it fully furnished
 
@@ -22,27 +23,42 @@ chmod a+x init_ubuntu.sh
 
 - `SSH`   Install ssh. (boolean)
 
+- `PIP`   Install python-pip. (boolean)
+
+- `NODE`   Install Node.js. (boolean)
+
+- `NPM`   Install NPM. (boolean)
+
 - `VSCODE`   Install VSCode. (boolean)
 
-- `VIM` 
+- `PYCHARM`   Install PyCharm. (boolean) 
 
-- `TYPORA`
+- `TYPORA`   Install markdown editor Typora. (boolean)
 
 - `JDK`   Install OpenJDK. (boolean)
 
 - `IDEA`   Install IDEA. (boolean)
 
+- `CHROME`   Install chrome web browser. (boolean)
+
+- `NOMACS`   Install nomacs. (boolean)
+
+- `VLC`   Install VLC media player. (boolean)
+
 - `PICGO`   Install and deploy clash for VPN connect. (boolean)
 
-- `CHROME`
+- `RM_FIREFOX`   Remove firefox web browser. (boolean)
 
-- `RM_FIREFOX`   Remove firefox 
+- `RM_GAMES`   Remove gnome-games. (boolean)
 
-- `RM_LIBRE`   Remove 
+- `RM_LIBRE`   Remove libreoffice. (boolean)
 
-- `RM_GAMES`   Remove
+- `RM_RHYTHM`   Remove rhythmbox music player. (boolean)
 
-- `RM_TODO`
+- `RM_TODO`   Remove ToDo. (boolean)
 
-- `RM_RHYTHM`
+- `RM_CALENDAR`   Remove calendar. (boolean)
 
+- `RM_SHOTWELL`   Remove shotwell. (boolean)
+
+- `RM_TOTEM`   Remove totem video player. (boolean)
