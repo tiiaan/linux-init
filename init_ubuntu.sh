@@ -48,6 +48,27 @@ if [ "${PIP}" == "1" ]; then
     PIP_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+# Install Node.js
+if [ "${NODE}" == "1" ]; then
+    sudo apt install -y nodejs
+    echo "node: `sudo node -v`"
+    NODE_FLAG=1
+    NODE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
+# Install NPM
+if [ "${NPM}" == "1" ]; then
+    sudo apt install -y npm
+    sudo npm config set registry https://registry.npm.taobao.org
+    sudo npm config list
+    sudo npm install npm@latest -g -y
+    sudo npm install -g n
+    sudo n latest
+    echo "npm: `sudo npm -v`"
+    NPM_FLAG=1
+    NPM_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
 # Install Python Models
 if [ "${PY_MODEL}" == "1" ]; then
     pip install -r -y requirements.txt
@@ -149,6 +170,9 @@ fi
 
 # Install PicGo
 if [ "${PICGO}" == "1" ]; then
+    sudo npm install picgo -g
+    # sudo picgo install super-prefix
+    # sudo picgo install gitee-uploader
     PICGO_FLAG=1
     PICGO_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
@@ -239,6 +263,14 @@ if [ "${PIP_FLAG}" == "1" ]; then
     echo -e "- PIP was installed at ${PIP_TIME}." | tee -a init.log
 fi
 
+if [ "${NODE_FLAG}" == "1" ]; then
+    echo -e "- Node.js was installed at ${NODE_TIME}." | tee -a init.log
+fi
+
+if [ "${NPM_FLAG}" == "1" ]; then
+    echo -e "- NPM was installed at ${NPM_TIME}." | tee -a init.log
+fi
+
 if [ "${VSCODE_FLAG}" == "1" ]; then
     echo -e "- Visual Studio Code was installed at ${VSCODE_TIME}." | tee -a init.log
 fi
@@ -290,8 +322,6 @@ fi
 if [ "${RM_TODO_FLAG}" == "1" ]; then
     echo -e "- ToDo was uninstalled at ${RM_TODO_TIME}." | tee -a init.log
 fi
-
-
 
 if [ "${RM_CALENDAR_FLAG}" == "1" ]; then
     echo -e "- Calendar was uninstalled at ${RM_CALENDAR_TIME}." | tee -a init.log
