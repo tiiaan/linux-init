@@ -1,19 +1,26 @@
-
 ### How to
-a script tool to quickly initialize your brand new ubuntu system, making it fully furnished
 
+Download and open `/ubuntu-scaffold` in terminal:
+
+```shell
+cp -r ./ ~/
+chmod +x init.sh
+./init.sh
 ```
-chmod a+x init_ubuntu.sh
-./init_ubuntu.sh
+
+After installation:
+
+```shell
+cd ~
+rm -r mirrors init.sh config LICENSE README.md
+sudo reboot
 ```
 
 ### Config Options
 
 - `CH_SRC`   Replace sources.list with domestic mirrors. (boolean)
 
-- `MIRROR`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (a/t/h/u)
-
-- `ENGLISH`   I suggest to install linux in Chinese, and then set the system language to English. (boolean)
+- `MIRROR`   Choose a mirror(aliyun/tsinghua/huawei/ustc), matters only when change_src is true. (string)
 
 - `GIT`   Install git. (boolean)
 
