@@ -12,7 +12,7 @@ After installation:
 
 ```shell
 cd ~
-rm -r mirrors init.sh config LICENSE README.md
+rm -r mirrors subs init.sh config LICENSE README.md
 sudo reboot
 ```
 
