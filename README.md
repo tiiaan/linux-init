@@ -3,17 +3,10 @@
 Download and open `/ubuntu-scaffold` in terminal:
 
 ```shell
-cp -r ./ ~/
-chmod +x init.sh
-./init.sh
-```
-
-After installation:
-
-```shell
+cp -r ./ubuntu_init.sh config mirrors ~/
 cd ~
-rm -r mirrors subs init.sh config LICENSE README.md
-sudo reboot
+chmod +x ubuntu_init.sh
+./ubuntu_init.sh
 ```
 
 ### Config Options
