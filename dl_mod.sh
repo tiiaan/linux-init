@@ -1,6 +1,20 @@
 #!/bin/bash
-# A script tool to quickly initialize your brand new ubuntu system, making it fully furnished.
-# @author tiiaan
+# A MOD for deep learning developers
 # @link https://github.com/tiiaan/ubuntu-scaffold
 
 source config
+
+#Install Anaconda
+if [ "${CONDA}" ]; then
+    sudo apt update -y
+    sudo apt install -y
+fi
+# Insatll TensorFlow
+if [ "${TENSOR}" == "1" ]; then
+
+fi
+
+# Install PyTorch
+if [ "${PYTORCH}" == "1" ]; then
+
+fi
