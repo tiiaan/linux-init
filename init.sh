@@ -5,18 +5,19 @@
 source config
 
 # Change Source
-Version = $(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
+Version=$(cat /etc/issue |sed -n "1,1p"| awk '{print $2}'|cut -d '.' -f 1,2)
 if [ "${CH_SRC}" == "1" ]; then
     if [ "${Version}" == "20.04" ]; then
         sudo cp /etc/apt/sources.list /etc/apt/sources_backup.list
         sudo cp ./mirrors/aliyun-2004.list /etc/apt/sources.list
+    elif [ "${Version}" == "18.04" ]; then
+        sudo cp /etc/apt/sources.list /etc/apt/sources_backup.list
+        sudo cp ./mirrors/aliyun-1804.list /etc/apt/sources.list
     fi
     sudo apt autoclean
     sudo apt update -y
     sudo apt upgrade -y
     sudo apt autoremove -y
-    CH_SRC_FLAG=1
-    CH_SRC_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
 # Install Git
@@ -85,6 +86,7 @@ if [ "${VSCODE}" == "1" ]; then
     VSCODE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+# Install Pycharm
 if [ "${PYCHARM}" == "1" ]; then
     sudo snap install pycharm-community --classic
     PYCHARM_FLAG=1
