@@ -1,6 +1,6 @@
 ### How to
 
-Download and open `/ubuntu-scaffold` in terminal:
+Download and open `/linux-scaffold` in terminal:
 
 ```shell
 cp -r ./ubuntu_init.sh config mirrors ~/
