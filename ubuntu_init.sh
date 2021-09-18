@@ -67,6 +67,22 @@ if [ "${NPM}" == "1" ]; then
     NPM_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+# Install Mlocate
+if [ "${MLOCATE}" == "1" ]; then
+    sudo apt update -y
+    sudo apt install -y mlocate
+    MLOCATE_FLAG=1
+    MLOCATE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
+# Install Tree
+if [ "${TREE}" == "1" ]; then
+    sudo apt update -y
+    sudo apt install -y tree
+    TREE_FLAG=1
+    TREE_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
 # Install LateX Env.
 if [ "${TEX}" == "1" ]; then
     sudo apt update -y
@@ -272,6 +288,14 @@ fi
 
 if [ "${NPM_FLAG}" == "1" ]; then
     echo -e "- NPM was installed at ${NPM_TIME}." | tee -a init.log
+fi
+
+if [ "${MLOCATE_FLAG}" == "1" ]; then
+    echo -e "- Mlocate was installed at ${MLOCATE_TIME}." | tee -a init.log
+fi
+
+if [ "${TREE_FLAG}" == "1" ]; then
+    echo -e "- Tree was installed at ${TREE_TIME}." | tee -a init.log
 fi
 
 if [ "${TEX_FLAG}" == "1" ]; then
