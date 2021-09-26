@@ -187,6 +187,14 @@ if [ "${VLC}" == "1" ]; then
     VLC_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+# Install ffmpeg
+if [ "${FFMPEG}" == "1" ]; then
+    sudo apt update -y
+    sudo apt install -y ffmpeg
+    FFMPEG_FLAG=1
+    FFMPEG_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
 # Install PicGo
 if [ "${PICGO}" == "1" ]; then
     sudo npm install picgo -g
@@ -322,12 +330,16 @@ if [ "${CHROME_FLAG}" == "1" ]; then
     echo -e "- Chrome web browser was installed at ${CHROME_TIME}." | tee -a init.log
 fi
 
-if [ "${NOMACS}" == "1" ]; then
+if [ "${NOMACS_FLAG}" == "1" ]; then
     echo -e "- Nomacs was installed at ${NOMACS_TIME}." | tee -a init.log
 fi
 
-if [ "${VLC}" == "1" ]; then
+if [ "${VLC_FLAG}" == "1" ]; then
     echo -e "- VLC media player was installed at ${VLC_TIME}." | tee -a init.log
+fi
+
+if [ "${FFMPEG_FLAG}" == "1" ]; then
+    echo -e "- FFmpeg was installed at ${FFMPEG_TIME}." | tee -a init.log
 fi
 
 if [ "${PICGO_FLAG}" == "1" ]; then

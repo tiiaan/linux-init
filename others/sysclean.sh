@@ -5,3 +5,4 @@ sudo apt clean -y
 sudo apt autoremove -y
 cd ~/.local/share/Trash/files
 rm -rf *
+rm -rf .*
