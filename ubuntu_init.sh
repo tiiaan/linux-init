@@ -195,6 +195,16 @@ if [ "${FFMPEG}" == "1" ]; then
     FFMPEG_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 fi
 
+# Install Docker
+if [ "${DOCKER}" == "1" ]; then
+    sudo apt-get remove docker docker-engine docker.io containerd runc
+    sudo apt update -y
+    sudo apt-get install -y docker.io
+    service docker status
+    DOCKER_FLAG=1
+    DOCKER_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+fi
+
 # Install PicGo
 if [ "${PICGO}" == "1" ]; then
     sudo npm install picgo -g
@@ -340,6 +350,10 @@ fi
 
 if [ "${FFMPEG_FLAG}" == "1" ]; then
     echo -e "- FFmpeg was installed at ${FFMPEG_TIME}." | tee -a init.log
+fi
+
+if [ "${DOCKER_FLAG}" == "1" ]; then
+    echo -e "- Docker was installed at ${DOCKER_TIME}." | tee -a init.log
 fi
 
 if [ "${PICGO_FLAG}" == "1" ]; then
