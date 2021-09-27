@@ -1,12 +1,12 @@
 ### How to
 
-Download and open `/linux-scaffold` in terminal:
+Download and open `/linux-init` in terminal:
 
 ```shell
-cp -r ./ubuntu_init.sh config mirrors ~/
+cp -r ./init.sh config mirrors ~/
 cd ~
-chmod +x ubuntu_init.sh
-./ubuntu_init.sh
+chmod +x init.sh
+./init.sh
 ```
 
 ### Config Options
@@ -44,6 +44,8 @@ chmod +x ubuntu_init.sh
 - `NOMACS`   Install nomacs. (boolean)
 
 - `VLC`   Install VLC media player. (boolean)
+
+- `FFMPEG`   Install ffmpeg. (boolean)
 
 - `PICGO`   Install and deploy clash for VPN connect. (boolean)
 
